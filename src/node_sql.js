@@ -61,7 +61,7 @@ const deleteRecorde =  async (id) =>{
 }}
 
 async function updateRecord (id , column, fieldEntry) {
-    try{ const sqlQuery = ` UPDATE visitors SET ${column} = $2 WHERE id = $1`;
+    try{ const sqlQuery = ` UPDATE visitors SET ${column} = $1 WHERE id = $2`;
         const fieldData = [fieldEntry ,id ]
         var results = await pool.query( sqlQuery ,fieldData)
         console.table(results.rows)
