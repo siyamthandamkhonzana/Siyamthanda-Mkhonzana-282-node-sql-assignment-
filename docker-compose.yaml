@@ -1,0 +1,28 @@
+
+
+version: "3.3"
+services:
+  postgres:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_USER=process.env.user
+      - POSTGRES_PASSWORD=process.env.password
+      - POSTGRES_DB=visitor
+    volumes:
+      - ./gitignore/postgresql:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+
+
+
+
+
+
+
